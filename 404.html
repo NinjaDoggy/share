@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>opening…</title>
+<style>body{background:#0a0f18;color:#c8d2e0;font:15px/1.5 system-ui;display:flex;align-items:center;justify-content:center;min-height:90vh}</style>
+<body><div id="m">opening&hellip;</div>
+<script>
+// Stable share link -> current tunnel host, path-preserving. This page is
+// GitHub Pages' 404 handler: /share/s/<slug> has no real file here, so Pages
+// serves this and we forward /s/<slug> to the live tunnel. The tunnel URL
+// below is re-rendered and pushed by update-redirect.sh on every rotation.
+var t = "https://pending.trycloudflare.com";
+var m = location.pathname.match(/\/s\/[A-Za-z0-9_-]+\/?$/);
+if (m) {
+  location.replace(t + m[0] + location.search + location.hash);
+} else {
+  document.getElementById('m').textContent = 'nothing here';
+}
+</script>
